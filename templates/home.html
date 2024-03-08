@@ -8,34 +8,39 @@
     <link rel="stylesheet" href="static\styles.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <body>
     <div class="bck-image">
         {% include 'nav.html' %}
-    
-        <div style="height: 80px;"></div>
-        <div class="container">
-
-            <br>
+        <div style="height: 40px;"></div>
+        <div style="padding-left:30px;height:40%;width:80% " class="container">
+            <form style="height:150%" action="{{url_for('predict')}}" method="post">
+                <input type="text" class="fieldinput" name="CRIM" placeholder=" CRIM" required="required"><br>
+                <input type="text" class="fieldinput" name="ZN" placeholder=" ZN" required="required"><br>
+                <input type="text" class="fieldinput" name="INDUS" placeholder=" INDUS" required="required"><br>
+                <input type="text" class="fieldinput" name="CHAS" placeholder=" CHAS" required="required"><br>
+                <input type="text" class="fieldinput" name="NOX" placeholder=" NOX" required="required"><br>
+                <input type="text" class="fieldinput" name="RM" placeholder=" RM" required="required"><br>
+                <input type="text" class="fieldinput" name="AGE" placeholder=" AGE" required="required"><br>
+                <input type="text" class="fieldinput" name="DIS" placeholder=" DIS" required="required"><br>
+                <input type="text" class="fieldinput" name="RAD" placeholder=" RAD" required="required"><br>
+                <input type="text" class="fieldinput" name="TAX" placeholder=" TAX" required="required"><br>
+                <input type="text" class="fieldinput" name="PIRATIO" placeholder=" PIRATIO" required="required"><br>
+                <input type="text" class="fieldinput" name="B" placeholder=" B" required="required"><br>
+                <input type="text" class="fieldinput" name="LSTAT" placeholder="LSTAT" required="required"><br>
+                <div style="padding-top:10px;"></div>
+                <button type="submit" class="form-button"><h3>Predict</h3></button>
+            </form>
+            <div style="margin-bottom: 13%;"></div>
+            <h4 class="prediction">{{prediction_text}}</h4>
         </div>
-        <!-- Bootstrap JS (Optional, for dropdowns, toggles, etc.) -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+        
 
-        <script>
-            function showSidebar(){
-                const sidebar = document.querySelector('.sidebar')
-                sidebar.style.display = 'flex'
-            }
-            function hideSidebar(){
-                const sidebar = document.querySelector('.sidebar')
-                sidebar.style.display = 'none'
-            } 
-            </script>
     </div>
+
 </body>
 
 </html>
